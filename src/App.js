@@ -2,10 +2,13 @@ import './App.css';
 import Body from './components/Body';
 import './components/Head';
 import Head from './components/Head';
+import store from './utils/store';
+import { Provider } from 'react-redux';
 function App() {
   return (
+    <Provider store={store}>
    <div>
-    <h1 className="text-3xl font-bold">Namaste React</h1>
+
    <Head></Head>
    <Body></Body>
 {/*
@@ -21,6 +24,7 @@ Body
 
 
    </div>
+   </Provider>
   );
 }
 
