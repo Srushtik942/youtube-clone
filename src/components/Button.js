@@ -1,11 +1,17 @@
 import React from 'react'
 
-const button = () => {
+const button = ({name,name1}) => {
   return (
     <div>
-        <button className='px-5 m-5 bg-gray-200 rounded-md'>All</button>
+    <div>
+
+        <button className='px-5 m-2 bg-gray-200 rounded-md'>{name}</button>
 
     </div>
+    {/* <button className='p-1 m-4  bg-gray-200 rounded-full'>{name1}</button> */}
+
+</div>
+
   )
 }
 

@@ -68,3 +68,10 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+- During fetching api of youtube it was denining
+  access, to resolve this :
+  - go to google cloud console
+  - select projecr
+  - api's & services
+  - search YouTube Data API V3 and enable it

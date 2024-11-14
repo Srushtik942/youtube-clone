@@ -1,8 +1,29 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { toggleMenu } from '../utils/appSlice';
 import { useDispatch } from 'react-redux';
+import { Youtube_search_api } from '../utils/constant';
 
 const Head = () => {
+
+  const [searchQuery, setSearchQuery] = useState("");
+  console.log(searchQuery);
+
+
+  useEffect(()=>{
+
+    //api call on every key stroke
+    //but if the difference between 2 api calls is < 200 ms
+    //decline the api call
+
+setTimeout(()=>getSearchSuggestions(),200);
+
+  },[searchQuery]);
+
+  const getSearchSuggestions = async()=>{
+    const data = await fetch(Youtube_search_api + searchQuery )
+    const json = await data.json();
+    console.log(json[1]);
+  }
 
   const dispatch = useDispatch();
   const toggleMenuHandler = ()=>{
@@ -22,7 +43,11 @@ alt='Menu' src='https://53.fs1.hubspotusercontent-na1.net/hub/53/hubfs/What%20is
 </a>
     </div>
     <div className='col-span-10 px-10'>
-      <input className='w-1/2 border border-gray-500 p-2 rounded-l-full' type='text'></input>
+      <input
+      className='w-1/2 border border-gray-500 p-2 rounded-l-full' type='text'
+      value={searchQuery}
+      onChange={(e)=>setSearchQuery(e.target.value)}
+      ></input>
       <button className='border border-gray-500 px-5 py-2 rounded-r-full bg-gray-300'>Search</button>
     </div>
     <div>
