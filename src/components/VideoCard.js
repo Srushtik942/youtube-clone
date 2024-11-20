@@ -18,6 +18,7 @@ const VideoCard = ({info}) => {
   )
 };
 
+//higher order function example for renering advertisement
 export const AdVideoCard = ({info})=>{
   return (
   <div

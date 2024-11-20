@@ -14,6 +14,8 @@ const Head = () => {
     //api call on every key stroke
     //but if the difference between 2 api calls is < 200 ms
     //decline the api call
+    //typing slow =200ms
+    //typint fast = 30ms
 
 setTimeout(()=>getSearchSuggestions(),200);
 
